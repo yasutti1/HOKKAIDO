@@ -1,3 +1,24 @@
+html {
+    overflow-y: auto;
+}
+
+body {
+    overflow-y: auto;
+    overflow-x: hidden;
+    min-height: 100vh;
+    height: auto;
+    margin: 0;
+}
+
+body {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* 固定された高さでスクロールを止めない */
+main {
+  height: auto;
+  min-height: 100vh;
+}
 
 body {
     margin: 0;
@@ -293,4 +314,89 @@ h2 {
 #password-result {
     font-weight: bold;
     font-size: 18px;
+}
+
+/* iPad・スマホ用 */
+@media screen and (max-width: 900px) {
+
+    html,
+    body {
+        width: 100%;
+        min-height: 100%;
+        height: auto;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+    body {
+        margin: 0;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    .game {
+        width: 100%;
+        max-width: 100%;
+        margin: 10px auto;
+        padding: 20px;
+        box-sizing: border-box;
+
+        /* iPadでは縮小しない */
+        transform: none;
+    }
+
+    /* ボタンを画面外へ移動させない */
+    #hit-button,
+    #stand-button,
+    #start-button,
+    #inpei-button {
+        position: static;
+        margin: 10px auto;
+    }
+
+    #hit-button,
+    #stand-button {
+        padding: 25px 35px;
+        font-size: 28px;
+    }
+
+    #start-button,
+    #inpei-button {
+        padding: 20px 25px;
+        font-size: 28px;
+    }
+
+    .card {
+        width: 70px;
+        height: 100px;
+        margin: 5px;
+        font-size: 26px;
+    }
+
+    #white-panel,
+    #password-panel {
+        width: 100%;
+        height: 100%;
+    }
+
+    .white-box {
+        width: 100%;
+        height: 100%;
+        overflow-y: auto;
+    }
+}
+
+/* ページ全体をスクロール可能にする */
+html,
+body {
+    overflow-y: scroll !important;
+    overflow-x: hidden;
+    height: auto !important;
+    min-height: 100%;
+}
+
+/* ゲーム画面がスクロールを邪魔しないようにする */
+.game {
+    height: auto;
+    min-height: 0;
 }
